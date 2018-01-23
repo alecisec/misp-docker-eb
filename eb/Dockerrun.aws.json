@@ -1,0 +1,83 @@
+{
+    "AWSEBDockerrunVersion": "2",
+    "containerDefinitions": [
+        {
+            "name": "misp",
+            "image": "<AWSaccountID.dkr.ecr.<region>.amazonaws.com/misp:latest",
+            "memory": 256,
+            "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+            "awslogs-group": "misp-logs",
+            "awslogs-region": "ap-southeast-2",
+            "awslogs-stream-prefix": "misp"
+        }
+    },
+      "environment": [
+        {
+          "name": "Container",
+          "value": "misp"
+        },
+        {
+          "name": "DB_USER",
+          "value": "admin"
+        },
+        {
+          "name": "DB_PASSWORD",
+          "value": "password"
+        },
+        {
+          "name": "DB_HOST",
+          "value": "<hostname>.<region>.rds.amazonaws.com"
+        },
+        {
+          "name": "DB_PORT",
+          "value": "3306"
+        },
+        {
+            "name": "EMAIL",
+            "value": "misp@example.com"
+          },
+          {
+            "name": "RELAY_HOST",
+            "value": "email-smtp.us-west-1.amazonaws.com"
+          },
+          {
+            "name": "EMAIL_USER",
+            "value": "XXXXXXXXXXXXXX"
+          },
+          {
+            "name": "EMAIL_PASSWORD",
+            "value": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+          },
+          {
+            "name": "EMAIL_PORT",
+            "value": "587"
+          },
+          {
+            "name": "SITE_URL",
+            "value": "misp.example.com"
+          },
+          {
+            "name": "S3_KEY",
+            "value": "XXXXXXXXXXXXXX"
+          },
+          {
+            "name": "S3_SECRET",
+            "value": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+          }, {
+            "name": "ENV",
+            "value": "misp-bucket-name"
+          }	
+      ],
+      "essential": true
+            
+        }
+    ]
+}

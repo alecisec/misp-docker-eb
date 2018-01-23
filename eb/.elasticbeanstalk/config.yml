@@ -1,0 +1,22 @@
+branch-defaults:
+  default:
+    environment: misp
+    group_suffix: null
+environment-defaults:
+  misp-nonprod:
+    branch: null
+    repository: null
+global:
+  application_name: misp
+  branch: null
+  default_ec2_keyname: <key-name-here>
+  default_platform: Multi-container Docker 17.06.2-ce (Generic)
+  default_region: <region>
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: null
+  repository: null
+  sc: null
+  workspace_type: Application

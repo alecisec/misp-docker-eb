@@ -1,0 +1,19 @@
+{
+    "Version": "2012-10-17",
+    "Id": "Policy1508994028741",
+    "Statement": [
+        {
+            "Sid": "Stmt1508994026542",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": [
+                    "arn:aws:iam::<AWSaccountID>:user/S3Storage",
+                    "arn:aws:iam::<AWSaccountID>:role/aws-elasticbeanstalk-ec2-role",
+                    "arn:aws:iam::<AWSaccountID>:root"
+                ]
+            },
+            "Action": "s3:*",
+            "Resource": "arn:aws:s3:::<BucketName>/*"
+        }
+    ]
+}
