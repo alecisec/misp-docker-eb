@@ -7,7 +7,7 @@ It has been designed to store data on AWS RDS however any MySQL server should wo
 s3/config.php should be uploaded to S3 storage as the container entrypoint will attempt to grab it upon launch.
 failing to correctly configure S3 will result in attachment date not being retained upon restarting services.
 
-* Deployment: *
+* Deployment: 
 
 Build image
  - docker build -t misp:2.4.86 . --tag <AWSaccountID>.dkr.ecr.<region>.amazonaws.com/misp:2.4.86
@@ -32,7 +32,7 @@ Create the Elastic Beanstalk environment
 
  - eb create misp --cfg misp
 
-* Environment Variables: *
+* Environment Variables: 
 
       - DB_USER - Username for MySQL
       - DB_PASSWORD - Password for MySQL
@@ -50,7 +50,7 @@ Create the Elastic Beanstalk environment
       - LOG_LEVEL - (Optional, defaults to INFO) Set Supervisor log level, set to debug etc.
 
 
-* Fixes added for various issues: *
+* Fixes added for various issues: 
 
  * Postfix DNS issues resolved by copying /etc/resolve.conf to /var/spool/postfix/etc/resolv.conf (done in entrypoint.sh)
  * MISP modules bind changed from localhost to 127.0.0.1 due to docker failing to resolve localhost (done in Dockerfile)
